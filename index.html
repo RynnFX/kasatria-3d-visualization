@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Kasatria Data Visualization</title>
+
+    <!-- ========================= -->
+    <!-- CSS -->
+    <!-- ========================= -->
+
+    <link rel="stylesheet"
+          href="./style.css">
+
+
+    <!-- ========================= -->
+    <!-- GOOGLE IDENTITY SERVICES -->
+    <!-- ========================= -->
+
+    <script src="https://accounts.google.com/gsi/client"
+            async
+            defer>
+    </script>
+
+
+    <!-- ========================= -->
+    <!-- THREE.JS IMPORT MAP -->
+    <!-- ========================= -->
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================= -->
+    <!-- LOGIN PAGE -->
+    <!-- ================================================= -->
+
+    <div id="login-section">
+
+        <div class="login-card">
+
+            <div class="login-icon">
+                K
+            </div>
+
+            <h1>
+                Kasatria
+            </h1>
+
+            <h2>
+                3D People Data Visualization
+            </h2>
+
+            <p>
+                Sign in with Google to access the visualization.
+            </p>
+
+            <div id="google-login"></div>
+
+            <div class="login-note">
+                Secure access using Google Authentication
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- MAIN APPLICATION -->
+    <!-- ================================================= -->
+
+    <div id="app">
+
+
+        <!-- =============================== -->
+        <!-- HEADER -->
+        <!-- =============================== -->
+
+        <header id="header">
+
+
+            <div class="title-area">
+
+                <h1>
+                    3D People Data Visualization
+                </h1>
+
+                <p>
+                    Interactive visualization of people data
+                </p>
+
+            </div>
+
+
+            <!-- =============================== -->
+            <!-- LEGEND -->
+            <!-- =============================== -->
+
+            <div id="legend">
+
+                <div class="legend-item">
+
+                    <span class="legend-dot red"></span>
+
+                    <span>
+                        Below $100K
+                    </span>
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot orange"></span>
+
+                    <span>
+                        $100K - $200K
+                    </span>
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-dot green"></span>
+
+                    <span>
+                        Above $200K
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================== -->
+            <!-- CONTROLS -->
+            <!-- =============================== -->
+
+            <div id="controls">
+
+                <button id="table"
+                        class="control-button active">
+
+                    TABLE
+
+                </button>
+
+
+                <button id="sphere"
+                        class="control-button">
+
+                    SPHERE
+
+                </button>
+
+
+                <button id="helix"
+                        class="control-button">
+
+                    DOUBLE HELIX
+
+                </button>
+
+
+                <button id="grid"
+                        class="control-button">
+
+                    GRID
+
+                </button>
+
+            </div>
+
+
+            <!-- =============================== -->
+            <!-- STATUS -->
+            <!-- =============================== -->
+
+            <div id="status">
+
+                Loading...
+
+            </div>
+
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- THREE.JS -->
+        <!-- ================================================= -->
+
+        <main id="container"></main>
+
+
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- JAVASCRIPT -->
+    <!-- =============================== -->
+
+    <script type="module"
+            src="./app.js">
+    </script>
+
+
+</body>
+
+</html>

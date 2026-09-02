@@ -1,0 +1,808 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #18212f 0%,
+            #080b10 45%,
+            #020305 100%
+        );
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+#login-section {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #172333 0%,
+            #070a0f 55%,
+            #020305 100%
+        );
+
+    z-index: 1000;
+
+}
+
+
+.login-card {
+
+    width: 430px;
+
+    max-width: 90%;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(20, 26, 36, 0.92);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.65);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+.login-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4285f4,
+            #7c4dff
+        );
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 12px 30px rgba(66, 133, 244, 0.35);
+
+}
+
+
+.login-card h1 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+}
+
+
+.login-card h2 {
+
+    margin:
+        8px 0 15px;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    color: #b7c0cd;
+
+}
+
+
+.login-card p {
+
+    margin:
+        0 0 28px;
+
+    color: #8e9aaa;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+#google-login {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.login-note {
+
+    margin-top: 22px;
+
+    font-size: 11px;
+
+    color: #667180;
+
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+#app {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+}
+
+
+#app.visible {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 198px;
+
+    z-index: 100;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-top: 18px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.96),
+            rgba(0, 0, 0, 0.88),
+            rgba(0, 0, 0, 0.25)
+        );
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+
+}
+
+
+.title-area {
+
+    text-align: center;
+
+}
+
+
+.title-area h1 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+
+}
+
+
+.title-area p {
+
+    margin:
+        5px 0 12px;
+
+    font-size: 13px;
+
+    color: #8994a3;
+
+}
+
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+#legend {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        7px 13px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.legend-dot {
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+}
+
+
+.legend-dot.red {
+
+    background: #ef4444;
+
+    box-shadow:
+        0 0 10px rgba(239, 68, 68, 0.6);
+
+}
+
+
+.legend-dot.orange {
+
+    background: #f59e0b;
+
+    box-shadow:
+        0 0 10px rgba(245, 158, 11, 0.6);
+
+}
+
+
+.legend-dot.green {
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 10px rgba(34, 197, 94, 0.6);
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+#controls {
+
+    display: flex;
+
+    gap: 8px;
+
+    pointer-events: auto;
+
+}
+
+
+.control-button {
+
+    padding:
+        9px 18px;
+
+    min-width: 85px;
+
+    border-radius: 8px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20);
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    color: #e5e7eb;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        all 0.2s ease;
+
+}
+
+
+.control-button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-color:
+        rgba(255, 255, 255, 0.35);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.control-button.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    border-color:
+        #6387ff;
+
+    box-shadow:
+        0 5px 20px rgba(37, 99, 235, 0.35);
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+#status {
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: #8792a2;
+
+}
+
+
+/* =========================================================
+   THREE CONTAINER
+========================================================= */
+
+#container {
+
+    position: fixed;
+
+    top: 198px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(28, 36, 50, 0.30),
+            rgba(0, 0, 0, 0) 55%
+        );
+
+}
+
+
+/* =========================================================
+   PERSON CARD
+========================================================= */
+
+.element {
+
+    width: 155px !important;
+
+    height: 205px !important;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28, 34, 45, 0.97),
+            rgba(9, 12, 18, 0.97)
+        );
+
+    border:
+        2px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.50);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transform-origin:
+        center center;
+
+    user-select: none;
+
+    backface-visibility: hidden;
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.element img {
+
+    display: block;
+
+    width: 100% !important;
+
+    height: 95px !important;
+
+    min-height: 95px !important;
+
+    max-height: 95px !important;
+
+    object-fit: cover !important;
+
+    object-position: center;
+
+    flex-shrink: 0;
+
+    background: #151a22;
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.element-content {
+
+    padding:
+        8px 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    min-height: 0;
+
+}
+
+
+.element-name {
+
+    font-size: 14px;
+
+    line-height: 17px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    margin-bottom: 5px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.element-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    font-size: 10.5px;
+
+    line-height: 13px;
+
+    color: #aab3c0;
+
+}
+
+
+.info-row {
+
+    display: flex;
+
+    gap: 4px;
+
+}
+
+
+.info-label {
+
+    color: #6f7b8c;
+
+    font-weight: 700;
+
+}
+
+
+.info-value {
+
+    color: #cbd2dc;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.net-worth {
+
+    margin-top: auto;
+
+    padding-top: 6px;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+}
+
+
+/* =========================================================
+   NET WORTH COLORS
+========================================================= */
+
+.element.net-red {
+
+    border-color:
+        rgba(239, 68, 68, 0.95);
+
+    box-shadow:
+        0 0 20px rgba(239, 68, 68, 0.12),
+        0 10px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.element.net-orange {
+
+    border-color:
+        rgba(245, 158, 11, 0.95);
+
+    box-shadow:
+        0 0 20px rgba(245, 158, 11, 0.12),
+        0 10px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.element.net-green {
+
+    border-color:
+        rgba(34, 197, 94, 0.95);
+
+    box-shadow:
+        0 0 20px rgba(34, 197, 94, 0.12),
+        0 10px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.net-red .net-worth {
+
+    color: #ff6b6b;
+
+}
+
+
+.net-orange .net-worth {
+
+    color: #ffb52e;
+
+}
+
+
+.net-green .net-worth {
+
+    color: #4ade80;
+
+}
+
+
+/* =========================================================
+   FALLBACK IMAGE
+========================================================= */
+
+.element img.image-error {
+
+    object-fit: contain !important;
+
+    padding: 25px;
+
+    opacity: 0.5;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #header {
+
+        height: 180px;
+
+    }
+
+    #container {
+
+        top: 180px;
+
+    }
+
+    .title-area h1 {
+
+        font-size: 23px;
+
+    }
+
+    .legend-item {
+
+        padding:
+            6px 8px;
+
+        font-size: 10px;
+
+    }
+
+    .control-button {
+
+        min-width: 70px;
+
+        padding:
+            8px 10px;
+
+        font-size: 10px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #legend {
+
+        gap: 4px;
+
+    }
+
+    .legend-item {
+
+        padding:
+            5px 6px;
+
+        font-size: 8px;
+
+    }
+
+    #controls {
+
+        gap: 4px;
+
+    }
+
+    .control-button {
+
+        min-width: auto;
+
+        padding:
+            7px 8px;
+
+        font-size: 9px;
+
+    }
+
+}
