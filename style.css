@@ -8,13 +8,10 @@
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-
     width: 100%;
     height: 100%;
-
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
 
     font-family:
         Arial,
@@ -22,113 +19,122 @@ body {
         sans-serif;
 
     background:
-        radial-gradient(
-            circle at top,
-            #18212f 0%,
-            #080b10 45%,
-            #020305 100%
-        );
+        #05070b;
 
-    color: white;
+    color:
+        #ffffff;
+
+    overflow: hidden;
 }
 
 
 /* =========================================================
-   LOGIN / PUBLIC LANDING PAGE
+   LOGIN SECTION
 ========================================================= */
 
 #login-section {
 
     position: fixed;
 
-    inset: 0;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+    align-items: center;
 
     padding: 20px;
 
-    overflow-y: auto;
-
     background:
         radial-gradient(
-            circle at center,
-            #172333 0%,
-            #070a0f 55%,
-            #020305 100%
+            circle at top,
+            #202938 0%,
+            #0a0d13 45%,
+            #05070b 100%
         );
+
+    overflow-y: auto;
 
     z-index: 1000;
 }
 
 
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
 .login-card {
 
     width: 500px;
 
-    max-width: 95%;
+    max-width: 100%;
 
     max-height: 92vh;
 
     overflow-y: auto;
 
-    padding: 35px 40px;
+    padding: 35px;
 
     text-align: center;
 
-    border-radius: 22px;
-
     background:
-        rgba(20, 26, 36, 0.94);
+        rgba(20, 25, 34, 0.96);
 
     border:
         1px solid rgba(255, 255, 255, 0.12);
 
+    border-radius: 20px;
+
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.65);
+        0 25px 70px rgba(0, 0, 0, 0.55);
 
     backdrop-filter:
-        blur(15px);
-
+        blur(10px);
 }
 
 
 /* =========================================================
-   LOGIN ICON
+   KASATRIA LOGO
 ========================================================= */
 
 .login-icon {
 
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
 
-    margin:
-        0 auto 16px;
+    margin: 0 auto 20px auto;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 17px;
+    padding: 8px;
 
     background:
-        linear-gradient(
-            135deg,
-            #4285f4,
-            #7c4dff
-        );
+        #ffffff;
 
-    font-size: 32px;
+    border-radius: 16px;
 
-    font-weight: 800;
+    overflow: hidden;
 
     box-shadow:
-        0 12px 30px rgba(66, 133, 244, 0.35);
+        0 8px 25px rgba(0, 0, 0, 0.3);
+}
 
+
+.login-icon img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
 }
 
 
@@ -140,51 +146,41 @@ body {
 
     margin: 0;
 
-    font-size: 30px;
+    font-size: 32px;
 
-    font-weight: 800;
+    font-weight: 700;
 
+    letter-spacing: 0.5px;
 }
 
 
 .login-card h2 {
 
     margin:
-        8px 0 18px;
+        8px 0 20px 0;
 
     font-size: 18px;
 
     font-weight: 500;
 
-    color: #b7c0cd;
-
+    color:
+        #b8c1cc;
 }
 
 
 .login-card p {
 
     margin:
-        0 0 13px;
+        0 auto 14px auto;
 
-    color: #9ba6b5;
+    max-width: 430px;
 
-    font-size: 13px;
+    font-size: 14px;
 
-    line-height: 1.55;
+    line-height: 1.65;
 
-}
-
-
-.login-card p:last-of-type {
-
-    margin-top: 18px;
-
-    margin-bottom: 20px;
-
-    color: #d4d9e1;
-
-    font-weight: 600;
-
+    color:
+        #c9d0d9;
 }
 
 
@@ -194,45 +190,133 @@ body {
 
 #google-login {
 
-    display: flex;
+    width: 100%;
 
-    justify-content: center;
-
-    min-height: 40px;
-
+    margin-top: 22px;
 }
 
 
-.login-note {
+.google-signin-button {
 
-    margin-top: 17px;
+    width: 100%;
 
-    font-size: 11px;
+    height: 48px;
 
-    color: #667180;
+    display: flex;
 
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding:
+        0 20px;
+
+    background:
+        #ffffff;
+
+    color:
+        #202124;
+
+    border:
+        1px solid #dadce0;
+
+    border-radius: 6px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+.google-signin-button:hover {
+
+    background:
+        #f8f9fa;
+
+    box-shadow:
+        0 1px 3px rgba(60, 64, 67, 0.3),
+        0 4px 8px rgba(60, 64, 67, 0.15);
+}
+
+
+.google-signin-button:active {
+
+    background:
+        #f1f3f4;
+
+    transform:
+        translateY(1px);
+}
+
+
+/* GOOGLE LOGO */
+
+.google-logo {
+
+    width: 18px;
+
+    height: 18px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+    display: block;
 }
 
 
 /* =========================================================
-   APPLICATION
+   LOGIN NOTE
+========================================================= */
+
+.login-note {
+
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color:
+        #7f8a98;
+}
+
+
+/* =========================================================
+   MAIN APP
 ========================================================= */
 
 #app {
 
-    position: fixed;
-
-    inset: 0;
+    width: 100%;
+    height: 100%;
 
     display: none;
 
+    position: relative;
+
+    background:
+        #05070b;
 }
 
 
 #app.visible {
 
     display: block;
-
 }
 
 
@@ -246,40 +330,44 @@ body {
 
     top: 0;
     left: 0;
-    right: 0;
 
-    height: 198px;
+    width: 100%;
 
-    z-index: 100;
+    min-height: 100px;
+
+    padding:
+        15px 20px;
 
     display: flex;
 
-    flex-direction: column;
-
     align-items: center;
 
-    padding-top: 18px;
+    gap: 25px;
 
     background:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.96),
-            rgba(0, 0, 0, 0.88),
-            rgba(0, 0, 0, 0.25)
-        );
+        rgba(5, 7, 11, 0.92);
 
     border-bottom:
         1px solid rgba(255, 255, 255, 0.08);
 
-    pointer-events: none;
+    backdrop-filter:
+        blur(10px);
 
+    z-index: 100;
+
+    flex-wrap: wrap;
 }
 
 
+/* =========================================================
+   TITLE
+========================================================= */
+
 .title-area {
 
-    text-align: center;
+    min-width: 220px;
 
+    flex: 1;
 }
 
 
@@ -287,24 +375,21 @@ body {
 
     margin: 0;
 
-    font-size: 30px;
+    font-size: 21px;
 
-    font-weight: 800;
-
-    letter-spacing: 0.2px;
-
+    font-weight: 700;
 }
 
 
 .title-area p {
 
     margin:
-        5px 0 12px;
+        5px 0 0 0;
 
-    font-size: 13px;
+    color:
+        #8f9aaa;
 
-    color: #8994a3;
-
+    font-size: 12px;
 }
 
 
@@ -318,12 +403,9 @@ body {
 
     align-items: center;
 
-    justify-content: center;
+    gap: 14px;
 
-    gap: 12px;
-
-    margin-bottom: 13px;
-
+    flex-wrap: wrap;
 }
 
 
@@ -333,23 +415,12 @@ body {
 
     align-items: center;
 
-    gap: 8px;
+    gap: 6px;
 
-    padding:
-        7px 13px;
+    font-size: 11px;
 
-    border-radius: 8px;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    background:
-        rgba(255, 255, 255, 0.07);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
-
+    color:
+        #c2c9d2;
 }
 
 
@@ -358,114 +429,94 @@ body {
     width: 10px;
     height: 10px;
 
-    border-radius: 50%;
+    display: inline-block;
 
+    border-radius: 50%;
 }
 
 
 .legend-dot.red {
 
-    background: #ef4444;
-
-    box-shadow:
-        0 0 10px rgba(239, 68, 68, 0.6);
-
+    background:
+        #ff3b30;
 }
 
 
 .legend-dot.orange {
 
-    background: #f59e0b;
-
-    box-shadow:
-        0 0 10px rgba(245, 158, 11, 0.6);
-
+    background:
+        #ff9500;
 }
 
 
 .legend-dot.green {
 
-    background: #22c55e;
-
-    box-shadow:
-        0 0 10px rgba(34, 197, 94, 0.6);
-
+    background:
+        #34c759;
 }
 
 
 /* =========================================================
-   BUTTONS
+   CONTROLS
 ========================================================= */
 
 #controls {
 
     display: flex;
 
-    gap: 8px;
+    gap: 7px;
 
-    pointer-events: auto;
-
+    flex-wrap: wrap;
 }
 
 
 .control-button {
 
     padding:
-        9px 18px;
-
-    min-width: 85px;
-
-    border-radius: 8px;
+        8px 12px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.20);
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 6px;
 
     background:
-        rgba(255, 255, 255, 0.07);
+        rgba(255, 255, 255, 0.05);
 
-    color: #e5e7eb;
+    color:
+        #cbd3dd;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    font-weight: 800;
+    font-weight: 700;
 
     cursor: pointer;
 
     transition:
         all 0.2s ease;
-
 }
 
 
 .control-button:hover {
 
     background:
-        rgba(255, 255, 255, 0.15);
+        rgba(255, 255, 255, 0.12);
 
-    border-color:
-        rgba(255, 255, 255, 0.35);
-
-    transform:
-        translateY(-1px);
-
+    color:
+        #ffffff;
 }
 
 
 .control-button.active {
 
     background:
-        linear-gradient(
-            135deg,
-            #2563eb,
-            #4f46e5
-        );
+        #ffffff;
+
+    color:
+        #111111;
 
     border-color:
-        #6387ff;
-
-    box-shadow:
-        0 5px 20px rgba(37, 99, 235, 0.35);
-
+        #ffffff;
 }
 
 
@@ -475,12 +526,14 @@ body {
 
 #status {
 
-    margin-top: 8px;
+    min-width: 120px;
 
-    font-size: 12px;
+    text-align: right;
 
-    color: #8792a2;
+    font-size: 11px;
 
+    color:
+        #8f9aaa;
 }
 
 
@@ -492,131 +545,137 @@ body {
 
     position: fixed;
 
-    top: 198px;
+    top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+
+    width: 100%;
+    height: 100%;
 
     overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(28, 36, 50, 0.30),
-            rgba(0, 0, 0, 0) 55%
-        );
-
 }
 
 
 /* =========================================================
-   PERSON CARD
+   PERSON ELEMENT
 ========================================================= */
 
 .element {
 
-    width: 155px !important;
+    width: 150px;
 
-    height: 205px !important;
+    min-height: 190px;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
     overflow: hidden;
-
-    box-sizing: border-box;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(28, 34, 45, 0.97),
-            rgba(9, 12, 18, 0.97)
-        );
-
-    border:
-        2px solid rgba(255, 255, 255, 0.18);
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.50);
 
     display: flex;
 
     flex-direction: column;
 
-    transform-origin:
-        center center;
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
 
-    user-select: none;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
 
-    backface-visibility: hidden;
-
+    transition:
+        box-shadow 0.2s ease;
 }
 
 
 /* =========================================================
-   IMAGE
+   NET WORTH COLORS
 ========================================================= */
 
-.element img {
+.element.net-red {
+
+    background:
+        linear-gradient(
+            145deg,
+            #8b0000,
+            #ff3b30
+        );
+}
+
+
+.element.net-orange {
+
+    background:
+        linear-gradient(
+            145deg,
+            #b85c00,
+            #ff9500
+        );
+}
+
+
+.element.net-green {
+
+    background:
+        linear-gradient(
+            145deg,
+            #087f23,
+            #34c759
+        );
+}
+
+
+/* =========================================================
+   PERSON IMAGE
+========================================================= */
+
+.element > img {
+
+    width: 100%;
+
+    height: 95px;
+
+    object-fit: cover;
 
     display: block;
 
-    width: 100% !important;
+    background:
+        #111820;
+}
 
-    height: 95px !important;
 
-    min-height: 95px !important;
+.element > img.image-error {
 
-    max-height: 95px !important;
-
-    object-fit: cover !important;
-
-    object-position: center;
-
-    flex-shrink: 0;
-
-    background: #151a22;
-
+    object-fit: cover;
 }
 
 
 /* =========================================================
-   CARD CONTENT
+   PERSON CONTENT
 ========================================================= */
 
 .element-content {
 
     padding:
-        8px 10px;
+        9px 10px;
+
+    flex: 1;
 
     display: flex;
 
     flex-direction: column;
-
-    flex: 1;
-
-    min-height: 0;
-
 }
 
 
 .element-name {
 
-    font-size: 14px;
+    font-size: 13px;
 
-    line-height: 17px;
+    font-weight: 700;
 
-    font-weight: 800;
-
-    color: #ffffff;
-
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 
     white-space: nowrap;
 
     overflow: hidden;
 
     text-overflow: ellipsis;
-
 }
 
 
@@ -626,14 +685,9 @@ body {
 
     flex-direction: column;
 
-    gap: 3px;
+    gap: 4px;
 
-    font-size: 10.5px;
-
-    line-height: 13px;
-
-    color: #aab3c0;
-
+    flex: 1;
 }
 
 
@@ -643,148 +697,48 @@ body {
 
     gap: 4px;
 
+    font-size: 9px;
+
+    line-height: 1.3;
 }
 
 
 .info-label {
 
-    color: #6f7b8c;
-
     font-weight: 700;
 
+    opacity: 0.8;
 }
 
 
 .info-value {
 
-    color: #cbd2dc;
-
     overflow: hidden;
-
-    white-space: nowrap;
 
     text-overflow: ellipsis;
 
+    white-space: nowrap;
 }
 
+
+/* =========================================================
+   NET WORTH
+========================================================= */
 
 .net-worth {
 
-    margin-top: auto;
+    margin-top: 8px;
 
-    padding-top: 6px;
+    padding-top: 7px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.2);
 
     font-size: 13px;
 
-    font-weight: 900;
+    font-weight: 800;
 
-}
-
-
-/* =========================================================
-   NET WORTH BACKGROUND COLORS
-========================================================= */
-
-/* BELOW $100K */
-
-.element.net-red {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(127, 29, 29, 0.88),
-            rgba(35, 12, 15, 0.96)
-        );
-
-    border-color:
-        rgba(239, 68, 68, 0.95);
-
-    box-shadow:
-        0 0 20px rgba(239, 68, 68, 0.16),
-        0 10px 30px rgba(0, 0, 0, 0.5);
-
-}
-
-
-/* $100K - $200K */
-
-.element.net-orange {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(120, 74, 10, 0.88),
-            rgba(38, 25, 8, 0.96)
-        );
-
-    border-color:
-        rgba(245, 158, 11, 0.95);
-
-    box-shadow:
-        0 0 20px rgba(245, 158, 11, 0.16),
-        0 10px 30px rgba(0, 0, 0, 0.5);
-
-}
-
-
-/* ABOVE $200K */
-
-.element.net-green {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(20, 100, 55, 0.88),
-            rgba(7, 35, 20, 0.96)
-        );
-
-    border-color:
-        rgba(34, 197, 94, 0.95);
-
-    box-shadow:
-        0 0 20px rgba(34, 197, 94, 0.16),
-        0 10px 30px rgba(0, 0, 0, 0.5);
-
-}
-
-
-/* =========================================================
-   NET WORTH TEXT
-========================================================= */
-
-.net-red .net-worth {
-
-    color: #ff8a8a;
-
-}
-
-
-.net-orange .net-worth {
-
-    color: #ffd166;
-
-}
-
-
-.net-green .net-worth {
-
-    color: #86efac;
-
-}
-
-
-/* =========================================================
-   FALLBACK IMAGE
-========================================================= */
-
-.element img.image-error {
-
-    object-fit: contain !important;
-
-    padding: 25px;
-
-    opacity: 0.5;
-
+    text-align: center;
 }
 
 
@@ -796,39 +750,21 @@ body {
 
     #header {
 
-        height: 180px;
+        gap: 12px;
 
     }
 
-    #container {
+    #legend {
 
-        top: 180px;
+        order: 3;
 
-    }
-
-    .title-area h1 {
-
-        font-size: 23px;
+        width: 100%;
 
     }
 
-    .legend-item {
+    #status {
 
-        padding:
-            6px 8px;
-
-        font-size: 10px;
-
-    }
-
-    .control-button {
-
-        min-width: 70px;
-
-        padding:
-            8px 10px;
-
-        font-size: 10px;
+        display: none;
 
     }
 
@@ -839,14 +775,15 @@ body {
 
     .login-card {
 
-        padding:
-            28px 22px;
+        padding: 25px 20px;
+
+        border-radius: 15px;
 
     }
 
     .login-card h1 {
 
-        font-size: 25px;
+        font-size: 27px;
 
     }
 
@@ -858,39 +795,21 @@ body {
 
     .login-card p {
 
-        font-size: 12px;
+        font-size: 13px;
 
     }
 
-    #legend {
+    .login-icon {
 
-        gap: 4px;
+        width: 70px;
 
-    }
-
-    .legend-item {
-
-        padding:
-            5px 6px;
-
-        font-size: 8px;
+        height: 70px;
 
     }
 
-    #controls {
+    .title-area h1 {
 
-        gap: 4px;
-
-    }
-
-    .control-button {
-
-        min-width: auto;
-
-        padding:
-            7px 8px;
-
-        font-size: 9px;
+        font-size: 17px;
 
     }
 
