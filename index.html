@@ -2,18 +2,16 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kasatria Data Visualization</title>
 
     <!-- Google Identity Services -->
-    <script src="https://accounts.google.com/gsi/client"
-            async
-            defer>
+    <script
+        src="https://accounts.google.com/gsi/client"
+        async
+        defer>
     </script>
 
     <!-- Three.js Import Map -->
@@ -26,27 +24,30 @@
     }
     </script>
 
-    <link rel="stylesheet"
-          href="./style.css">
-
+    <link
+        rel="stylesheet"
+        href="./style.css">
 </head>
 
 <body>
 
     <!-- ================================================= -->
-    <!-- PUBLIC LANDING / LOGIN PAGE -->
+    <!-- PUBLIC LANDING / LOGIN -->
     <!-- ================================================= -->
 
     <div id="login-section">
 
         <div class="login-card">
 
-            <!-- Application Icon -->
+            <!-- Kasatria Logo -->
             <div class="login-icon">
-                K
+
+                <img
+                    src="./kasatria-logo.jpg"
+                    alt="Kasatria Logo">
+
             </div>
 
-            <!-- Application Name -->
             <h1>
                 Kasatria
             </h1>
@@ -55,7 +56,6 @@
                 3D People Data Visualization
             </h2>
 
-            <!-- Application Purpose -->
             <p>
                 Kasatria Data Visualization is an interactive web
                 application designed to visualize people data in
@@ -75,13 +75,12 @@
                 an interactive 3D visualization.
             </p>
 
-            <!-- Login Information -->
             <p>
                 Sign in with Google to access the interactive
                 visualization.
             </p>
 
-            <!-- Google Login Button -->
+            <!-- Google Login -->
             <div id="google-login"></div>
 
             <div class="login-note">
@@ -102,7 +101,6 @@
         <!-- HEADER -->
         <header id="header">
 
-            <!-- Title -->
             <div class="title-area">
 
                 <h1>
@@ -157,32 +155,36 @@
             <!-- LAYOUT CONTROLS -->
             <div id="controls">
 
-                <button id="table"
-                        class="control-button active">
+                <button
+                    id="table"
+                    class="control-button active">
 
                     TABLE
 
                 </button>
 
 
-                <button id="sphere"
-                        class="control-button">
+                <button
+                    id="sphere"
+                    class="control-button">
 
                     SPHERE
 
                 </button>
 
 
-                <button id="helix"
-                        class="control-button">
+                <button
+                    id="helix"
+                    class="control-button">
 
                     DOUBLE HELIX
 
                 </button>
 
 
-                <button id="grid"
-                        class="control-button">
+                <button
+                    id="grid"
+                    class="control-button">
 
                     GRID
 
@@ -205,12 +207,10 @@
     </div>
 
 
-    <!-- ================================================= -->
     <!-- APPLICATION JAVASCRIPT -->
-    <!-- ================================================= -->
-
-    <script type="module"
-            src="./app.js">
+    <script
+        type="module"
+        src="./app.js">
     </script>
 
 </body>
