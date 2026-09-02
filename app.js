@@ -9,23 +9,18 @@
 
 const CONFIG = {
 
-    // Google OAuth Client ID
     CLIENT_ID:
         "402741316973-5ebqvn6rme8e0793qb74k4h4von1a1qi.apps.googleusercontent.com",
 
-    // Google Spreadsheet ID
     SHEET_ID:
         "1yMBROAsyBQYAgv94-NydIkpskTJricm0nZfXa43wZ1I",
 
-    // Sheet range
     RANGE:
         "A:F",
 
-    // Google Sheets API
     SHEETS_API:
         "https://sheets.googleapis.com/v4/spreadsheets/",
 
-    // Animation duration
     ANIMATION_DURATION:
         1200
 
@@ -91,20 +86,28 @@ let accessToken = null;
 // =========================================================
 
 const loginSection =
-    document.getElementById("login-section");
+    document.getElementById(
+        "login-section"
+    );
 
 const app =
-    document.getElementById("app");
+    document.getElementById(
+        "app"
+    );
 
 const container =
-    document.getElementById("container");
+    document.getElementById(
+        "container"
+    );
 
 const statusElement =
-    document.getElementById("status");
+    document.getElementById(
+        "status"
+    );
 
 
 // =========================================================
-// START APPLICATION
+// START
 // =========================================================
 
 window.addEventListener(
@@ -120,7 +123,7 @@ window.addEventListener(
 
 
 // =========================================================
-// WAIT FOR GOOGLE IDENTITY SERVICES
+// WAIT FOR GOOGLE
 // =========================================================
 
 function waitForGoogle() {
@@ -189,67 +192,76 @@ function setupGoogleLogin() {
         });
 
 
+    // =====================================================
+    // CREATE GOOGLE BUTTON
+    // =====================================================
+
     const loginButton =
-        document.createElement("button");
+        document.createElement(
+            "button"
+        );
+
 
     loginButton.type =
         "button";
 
-    loginButton.textContent =
-        "Sign in with Google";
 
-    loginButton.style.cssText = `
+    loginButton.className =
+        "google-signin-button";
 
-        padding: 12px 24px;
-        border: none;
-        border-radius: 8px;
-        background: #ffffff;
-        color: #202124;
-        font-size: 14px;
-        font-weight: 700;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+
+    loginButton.innerHTML = `
+
+        <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google"
+            class="google-logo"
+        >
+
+        <span>
+            Sign in with Google
+        </span>
 
     `;
 
 
-    loginButton.addEventListener(
-        "mouseenter",
-        () => {
-
-            loginButton.style.background =
-                "#f1f3f4";
-
-        }
-    );
-
-
-    loginButton.addEventListener(
-        "mouseleave",
-        () => {
-
-            loginButton.style.background =
-                "#ffffff";
-
-        }
-    );
-
+    // =====================================================
+    // BUTTON CLICK
+    // =====================================================
 
     loginButton.addEventListener(
         "click",
         () => {
 
             googleTokenClient.requestAccessToken({
-                prompt: "consent"
+
+                prompt:
+                    "consent"
+
             });
 
         }
     );
 
 
-    document
-        .getElementById("google-login")
-        .appendChild(loginButton);
+    const googleLogin =
+        document.getElementById(
+            "google-login"
+        );
+
+
+    if (
+        googleLogin
+    ) {
+
+        googleLogin.innerHTML =
+            "";
+
+        googleLogin.appendChild(
+            loginButton
+        );
+
+    }
 
 }
 
@@ -266,6 +278,7 @@ async function startApplication() {
     app.classList.add(
         "visible"
     );
+
 
     updateStatus(
         "Loading Google Sheet..."
@@ -313,9 +326,11 @@ async function startApplication() {
             error
         );
 
+
         updateStatus(
             "Failed to load Google Sheet."
         );
+
 
         alert(
             "Unable to load Google Sheet data.\n\n" +
@@ -365,6 +380,7 @@ async function loadGoogleSheet() {
         const errorText =
             await response.text();
 
+
         throw new Error(
             `Google Sheets API error: ${response.status} ${errorText}`
         );
@@ -389,7 +405,6 @@ async function loadGoogleSheet() {
     }
 
 
-    // First row = header
     const headers =
         rows[0].map(
             value =>
@@ -471,7 +486,6 @@ async function loadGoogleSheet() {
         };
 
 
-        // Skip completely empty rows
         if (
             !person.name &&
             !person.photo &&
@@ -534,7 +548,7 @@ function getColumn(
 
 
 // =========================================================
-// NET WORTH VALUE
+// NET WORTH NUMBER
 // =========================================================
 
 function getNetWorthNumber(
@@ -551,7 +565,7 @@ function getNetWorthNumber(
     }
 
 
-    let text =
+    const text =
         String(value)
             .replace(
                 /,/g,
@@ -563,11 +577,6 @@ function getNetWorthNumber(
             )
             .trim();
 
-
-    // Handle values such as:
-    // 250K
-    // $250K
-    // 1.5M
 
     const upper =
         text.toUpperCase();
@@ -690,7 +699,6 @@ function initThree() {
         new THREE.Scene();
 
 
-    // Camera
     camera =
         new THREE.PerspectiveCamera(
             45,
@@ -708,7 +716,6 @@ function initThree() {
     );
 
 
-    // Renderer
     renderer =
         new CSS3DRenderer();
 
@@ -722,8 +729,10 @@ function initThree() {
     renderer.domElement.style.position =
         "absolute";
 
+
     renderer.domElement.style.top =
         "0";
+
 
     renderer.domElement.style.left =
         "0";
@@ -734,7 +743,6 @@ function initThree() {
     );
 
 
-    // Controls
     controls =
         new TrackballControls(
             camera,
@@ -745,26 +753,34 @@ function initThree() {
     controls.rotateSpeed =
         1.1;
 
+
     controls.zoomSpeed =
         1.0;
+
 
     controls.panSpeed =
         0.4;
 
+
     controls.noZoom =
         false;
+
 
     controls.noPan =
         false;
 
+
     controls.staticMoving =
         false;
+
 
     controls.dynamicDampingFactor =
         0.08;
 
+
     controls.minDistance =
         1500;
+
 
     controls.maxDistance =
         10000;
@@ -776,7 +792,7 @@ function initThree() {
 
 
 // =========================================================
-// CREATE PERSON CARDS
+// CREATE PEOPLE
 // =========================================================
 
 function createPeople() {
@@ -837,7 +853,7 @@ function createPeople() {
 
 
 // =========================================================
-// CREATE CARD HTML
+// CREATE PERSON CARD
 // =========================================================
 
 function createPersonCard(
@@ -893,6 +909,7 @@ function createPersonCard(
                 "image-error"
             );
 
+
             image.src =
                 createPlaceholder(
                     person.name
@@ -925,6 +942,7 @@ function createPersonCard(
 
     name.className =
         "element-name";
+
 
     name.textContent =
         person.name ||
@@ -1070,7 +1088,7 @@ function createInfoRow(
 
 
 // =========================================================
-// PLACEHOLDER IMAGE
+// PLACEHOLDER
 // =========================================================
 
 function createPlaceholder(
@@ -1110,7 +1128,7 @@ function createLayouts() {
 
 // =========================================================
 // TABLE
-// 20 COLUMNS × 10 ROWS
+// 20 × 10
 // =========================================================
 
 function createTableLayout() {
@@ -1122,12 +1140,14 @@ function createTableLayout() {
     const columns =
         20;
 
+
     const rows =
         10;
 
 
     const columnSpacing =
         170;
+
 
     const rowSpacing =
         225;
@@ -1152,6 +1172,7 @@ function createTableLayout() {
         const column =
             i % columns;
 
+
         const row =
             Math.floor(
                 i / columns
@@ -1170,26 +1191,21 @@ function createTableLayout() {
                 rowSpacing;
 
 
-        const position =
-            new THREE.Vector3(
-                x,
-                y,
-                0
-            );
-
-
-        const rotation =
-            new THREE.Euler(
-                0,
-                0,
-                0
-            );
-
-
         targets.table.push({
 
-            position,
-            rotation
+            position:
+                new THREE.Vector3(
+                    x,
+                    y,
+                    0
+                ),
+
+            rotation:
+                new THREE.Euler(
+                    0,
+                    0,
+                    0
+                )
 
         });
 
@@ -1278,12 +1294,23 @@ function createSphereLayout() {
         );
 
 
+        // FIX MIRROR TEXT
+        // Rotate the CSS3D card 180 degrees
+        // so the text faces the correct direction.
+
+        const rotation =
+            new THREE.Euler(
+                dummy.rotation.x,
+                dummy.rotation.y + Math.PI,
+                dummy.rotation.z
+            );
+
+
         targets.sphere.push({
 
             position,
 
-            rotation:
-                dummy.rotation.clone()
+            rotation
 
         });
 
@@ -1305,8 +1332,10 @@ function createHelixLayout() {
     const radius =
         950;
 
+
     const verticalSpacing =
         38;
+
 
     const angleStep =
         0.32;
@@ -1320,6 +1349,7 @@ function createHelixLayout() {
 
         const strand =
             i % 2;
+
 
         const index =
             Math.floor(
@@ -1378,12 +1408,23 @@ function createHelixLayout() {
         );
 
 
+        // FIX MIRROR TEXT
+        // Rotate the CSS3D card 180 degrees
+        // so the text faces the correct direction.
+
+        const rotation =
+            new THREE.Euler(
+                dummy.rotation.x,
+                dummy.rotation.y + Math.PI,
+                dummy.rotation.z
+            );
+
+
         targets.helix.push({
 
             position,
 
-            rotation:
-                dummy.rotation.clone()
+            rotation
 
         });
 
@@ -1406,8 +1447,10 @@ function createGridLayout() {
     const columns =
         5;
 
+
     const rows =
         4;
+
 
     const layers =
         10;
@@ -1416,8 +1459,10 @@ function createGridLayout() {
     const xSpacing =
         200;
 
+
     const ySpacing =
         240;
+
 
     const zSpacing =
         250;
@@ -1578,7 +1623,6 @@ function switchLayout(
             );
 
 
-        // Smooth ease
         const eased =
             1 -
             Math.pow(
@@ -1752,15 +1796,18 @@ function setupButtons() {
             "table"
         );
 
+
     const sphereButton =
         document.getElementById(
             "sphere"
         );
 
+
     const helixButton =
         document.getElementById(
             "helix"
         );
+
 
     const gridButton =
         document.getElementById(
@@ -1768,7 +1815,18 @@ function setupButtons() {
         );
 
 
-    // Avoid duplicate listeners
+    if (
+        !tableButton ||
+        !sphereButton ||
+        !helixButton ||
+        !gridButton
+    ) {
+
+        return;
+
+    }
+
+
     if (
         tableButton.dataset.ready
     ) {
@@ -1895,7 +1953,7 @@ function updateStatus(
 
 
 // =========================================================
-// ANIMATION LOOP
+// ANIMATION
 // =========================================================
 
 function animate() {
