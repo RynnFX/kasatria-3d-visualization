@@ -10,28 +10,13 @@
 
     <title>Kasatria Data Visualization</title>
 
-    <!-- ========================= -->
-    <!-- CSS -->
-    <!-- ========================= -->
-
-    <link rel="stylesheet"
-          href="./style.css">
-
-
-    <!-- ========================= -->
-    <!-- GOOGLE IDENTITY SERVICES -->
-    <!-- ========================= -->
-
+    <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client"
             async
             defer>
     </script>
 
-
-    <!-- ========================= -->
-    <!-- THREE.JS IMPORT MAP -->
-    <!-- ========================= -->
-
+    <!-- Three.js Import Map -->
     <script type="importmap">
     {
         "imports": {
@@ -41,24 +26,27 @@
     }
     </script>
 
-</head>
+    <link rel="stylesheet"
+          href="./style.css">
 
+</head>
 
 <body>
 
-
     <!-- ================================================= -->
-    <!-- LOGIN PAGE -->
+    <!-- PUBLIC LANDING / LOGIN PAGE -->
     <!-- ================================================= -->
 
     <div id="login-section">
 
         <div class="login-card">
 
+            <!-- Application Icon -->
             <div class="login-icon">
                 K
             </div>
 
+            <!-- Application Name -->
             <h1>
                 Kasatria
             </h1>
@@ -67,10 +55,33 @@
                 3D People Data Visualization
             </h2>
 
+            <!-- Application Purpose -->
             <p>
-                Sign in with Google to access the visualization.
+                Kasatria Data Visualization is an interactive web
+                application designed to visualize people data in
+                a 3D environment.
             </p>
 
+            <p>
+                The application retrieves authorized data from
+                Google Sheets and presents the information using
+                four interactive layouts: Table, Sphere,
+                Double Helix, and Grid.
+            </p>
+
+            <p>
+                Users can explore information such as name, photo,
+                age, country, interest, and net worth through
+                an interactive 3D visualization.
+            </p>
+
+            <!-- Login Information -->
+            <p>
+                Sign in with Google to access the interactive
+                visualization.
+            </p>
+
+            <!-- Google Login Button -->
             <div id="google-login"></div>
 
             <div class="login-note">
@@ -88,14 +99,10 @@
 
     <div id="app">
 
-
-        <!-- =============================== -->
         <!-- HEADER -->
-        <!-- =============================== -->
-
         <header id="header">
 
-
+            <!-- Title -->
             <div class="title-area">
 
                 <h1>
@@ -109,10 +116,7 @@
             </div>
 
 
-            <!-- =============================== -->
-            <!-- LEGEND -->
-            <!-- =============================== -->
-
+            <!-- NET WORTH LEGEND -->
             <div id="legend">
 
                 <div class="legend-item">
@@ -150,10 +154,7 @@
             </div>
 
 
-            <!-- =============================== -->
-            <!-- CONTROLS -->
-            <!-- =============================== -->
-
+            <!-- LAYOUT CONTROLS -->
             <div id="controls">
 
                 <button id="table"
@@ -190,38 +191,27 @@
             </div>
 
 
-            <!-- =============================== -->
             <!-- STATUS -->
-            <!-- =============================== -->
-
             <div id="status">
-
                 Loading...
-
             </div>
-
 
         </header>
 
 
-        <!-- ================================================= -->
-        <!-- THREE.JS -->
-        <!-- ================================================= -->
-
+        <!-- THREE.JS CONTAINER -->
         <main id="container"></main>
-
 
     </div>
 
 
-    <!-- =============================== -->
-    <!-- JAVASCRIPT -->
-    <!-- =============================== -->
+    <!-- ================================================= -->
+    <!-- APPLICATION JAVASCRIPT -->
+    <!-- ================================================= -->
 
     <script type="module"
             src="./app.js">
     </script>
-
 
 </body>
 
